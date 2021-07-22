@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    html, body, .body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      background-color: rgba(0,0,0, 1);
+    }
+
+    .body div {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      min-height: 100px;
+
+      margin: 5px;
+      background-color: rgba(255,255,255, 1);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .body div * {
+      margin: 5px 0px;
+    }
+
+    .body div input {
+      cursor: pointer;
+    }
+
+    .body div input:hover {
+      opacity: 0.6;
+    }
+
+    .body div button {
+      padding: 10px 0px;
+      cursor: pointer;
+      outline: 0;
+    }
+    .loading-page {
+      position: absolute;
+      z-index: 5;
+
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: rgba(0,0,0, 0.8);
+
+      cursor: wait;
+
+      animation: show_loading 2s forwards;
+    }
+
+    .loading-page #loadingSpan {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    @keyframes show_loading {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes ldio-2fadphxtm3 {
+      0% { opacity: 1 }
+      100% { opacity: 0 }
+    }
+
+    .ldio-2fadphxtm3 div {
+      left: 166.25px;
+      top: 96.25px;
+      position: absolute;
+      animation: ldio-2fadphxtm3 linear 1s infinite;
+      background: #85a2b6;
+      width: 17.5px;
+      height: 17.5px;
+      border-radius: 8.75px / 8.75px;
+      transform-origin: 8.75px 78.75px;
+    }.ldio-2fadphxtm3 div:nth-child(1) {
+      transform: rotate(0deg);
+      animation-delay: -0.95s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(2) {
+      transform: rotate(18deg);
+      animation-delay: -0.9s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(3) {
+      transform: rotate(36deg);
+      animation-delay: -0.85s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(4) {
+      transform: rotate(54deg);
+      animation-delay: -0.8s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(5) {
+      transform: rotate(72deg);
+      animation-delay: -0.75s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(6) {
+      transform: rotate(90deg);
+      animation-delay: -0.7s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(7) {
+      transform: rotate(108deg);
+      animation-delay: -0.65s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(8) {
+      transform: rotate(126deg);
+      animation-delay: -0.6s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(9) {
+      transform: rotate(144deg);
+      animation-delay: -0.55s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(10) {
+      transform: rotate(162deg);
+      animation-delay: -0.5s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(11) {
+      transform: rotate(180deg);
+      animation-delay: -0.45s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(12) {
+      transform: rotate(198deg);
+      animation-delay: -0.4s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(13) {
+      transform: rotate(216deg);
+      animation-delay: -0.35s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(14) {
+      transform: rotate(234deg);
+      animation-delay: -0.3s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(15) {
+      transform: rotate(252deg);
+      animation-delay: -0.25s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(16) {
+      transform: rotate(270deg);
+      animation-delay: -0.2s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(17) {
+      transform: rotate(288deg);
+      animation-delay: -0.15s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(18) {
+      transform: rotate(306deg);
+      animation-delay: -0.1s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(19) {
+      transform: rotate(324deg);
+      animation-delay: -0.05s;
+      background: #85a2b6;
+    }.ldio-2fadphxtm3 div:nth-child(20) {
+      transform: rotate(342deg);
+      animation-delay: 0s;
+      background: #85a2b6;
+    }
+    .loadingio-spinner-spinner-meb1m2uge88 {
+      width: 350px;
+      height: 350px;
+      display: inline-block;
+      overflow: hidden;
+    }
+    .ldio-2fadphxtm3 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: translateZ(0) scale(1);
+      backface-visibility: hidden;
+      transform-origin: 0 0;
+    }
+    .ldio-2fadphxtm3 div { box-sizing: content-box; }
+  </style>
+</head>
+<body>
+  <div id="temporary"></div>
+
+  <div class="body">
+    <div>
+      <h4>Encrypt files</h4>
+
+      <input id="encryptFiles" type="file" accept="application/pdf" multiple="true">
+
+      <button onclick="encrypt(event)">Encrypt</button>
+    </div>
+
+    <div>
+      <h4>Decrypt files</h4>
+
+      <h6>Keys</h6>
+
+      <input id="decryptFilesKeys" type="file" multiple="true">
+
+      <h6>Decrypt Files</h6>
+
+      <input id="decryptFiles" type="file" accept="application/pdf" multiple="true">
+      
+      <button onclick="decrypt(event)">Decrypt</button>
+    </div>
+
+  </div>
+
+  <script>
+    const randomNumber = function (min, max) {
+      return Math.floor(Math.random() * ((max) - (min) + 1) + (min))
+    }
+
+    class Convert {
+      constructor() { 
+        this.base64Keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+      }
+
+      concat_buffer(bufferArray = [new Uint8Array(0)]) {
+        let totalLength = bufferArray.reduce((acc, value) => acc + value.length, 0);
+
+        if (!bufferArray.length) return new Uint8Array(0);
+        let buffer = new Uint8Array(totalLength)
+
+        let length = 0;
+        for(let bytes of bufferArray) {
+          buffer.set(bytes, length);
+          length += bytes.length;
+        }
+
+        return buffer;
+      }
+
+      // private method for UTF-8 encoding
+      utf8_encode(string) {
+        var utftext = "";
+        string = string.replace(/\r\n/g,"\n");
+
+        for (var n = 0; n < string.length; n++) {
+          var c = string.charCodeAt(n);
+
+          if (c < 128) {
+            utftext += String.fromCharCode(c);
+          }
+          else if((c > 127) && (c < 2048)) {
+            utftext += String.fromCharCode((c >> 6) | 192);
+            utftext += String.fromCharCode((c & 63) | 128);
+          }
+          else {
+            utftext += String.fromCharCode((c >> 12) | 224);
+            utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+            utftext += String.fromCharCode((c & 63) | 128);
+          }
+        }
+
+        return utftext;
+      }
+
+      // private method for UTF-8 decoding
+      utf8_decode(utftext) {
+        var string = "",
+        i  = 0,
+        c2 = i,
+        c1 = c2,
+        c  = c1;
+
+        while (i < utftext.length) {
+          c = utftext.charCodeAt(i);
+
+          if (c < 128) {
+            string += String.fromCharCode(c);
+            i++;
+          }
+          else if((c > 191) && (c < 224)) {
+            c2 = utftext.charCodeAt(i+1);
+            string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+            i += 2;
+          }
+          else {
+            c2 = utftext.charCodeAt(i+1);
+            c3 = utftext.charCodeAt(i+2);
+            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+            i += 3;
+          }
+        }
+
+        return string;
+      }
+
+      /**
+           * @param {String} input 
+           * 
+           *  convert string to base64
+           * 
+           * @returns String[Base64]
+           */
+      stringToBase64(string = '') {
+        let buffer = this.stringToBuffer(this.utf8_encode(string))
+        return this.bufferToBase64(buffer)
+      }
+
+      /**
+       * @param {String} input 
+       * 
+       *  convert base64 to String[utf-8]
+       * 
+       * @returns String[utf-8]
+       */
+      base64ToString(base64 = '') {
+        let buffer = this.base64ToBuffer(base64)
+        return this.utf8_decode(this.bufferToString(buffer))
+      }
+
+      /**
+       * @param {ArrayBuffer} buffer 
+       * 
+       *  convert buffer to base64
+       * 
+       * @returns String[base64]
+       */
+      bufferToBase64(buffer = new ArrayBuffer(0)) {
+        var array = this.bufferToArray(buffer),
+            output = "",
+            chr1, chr2, chr3, enc1, enc2, enc3, enc4,
+            i = 0
+
+        while (i < array.length) {
+          chr1 = array[i++];
+          chr2 = array[i++];
+          chr3 = array[i++];
+
+          enc1 = chr1 >> 2;
+          enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+          enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+          enc4 = chr3 & 63;
+
+          if (isNaN(chr2)) { enc3 = enc4 = 64; } 
+          else if (isNaN(chr3)) { enc4 = 64; }
+
+          output = output +
+                  this.base64Keys.charAt(enc1) + 
+                  this.base64Keys.charAt(enc2) +
+                  this.base64Keys.charAt(enc3) + 
+                  this.base64Keys.charAt(enc4);
+        }
+
+        return output;
+      }
+
+      /**
+       * @param {String} base64 
+       * 
+       *  convert base64 to Buffer
+       * 
+       * @returns ArrayBuffer
+       */
+      base64ToBuffer(base64 = '') {
+        var bytes = [],
+            chr1, chr2, chr3,
+            enc1, enc2, enc3, enc4,
+            i = 0;
+        base64 = base64.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+        while (i < base64.length) {
+          enc1 = this.base64Keys.indexOf(base64.charAt(i++));
+          enc2 = this.base64Keys.indexOf(base64.charAt(i++));
+          enc3 = this.base64Keys.indexOf(base64.charAt(i++));
+          enc4 = this.base64Keys.indexOf(base64.charAt(i++));
+
+          chr1 = (enc1 << 2) | (enc2 >> 4);
+          chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+          chr3 = ((enc3 & 3) << 6) | enc4;
+
+          bytes.push(chr1)
+          if (enc3 != 64) bytes.push(chr2)
+          if (enc4 != 64) bytes.push(chr3)
+        }
+
+        return this.arrayToBuffer(bytes)
+      }
+
+      /**
+       * @param {Number} array 
+       * 
+       *  convert array to buffer
+       * 
+       * @returns ArrayBuffer
+       */
+      arrayToBuffer(array = []) {
+        let bytes = new Uint8Array(array.length)
+
+        for(let index in array)
+          bytes[index] = array[index]
+
+        return bytes.buffer;
+      }
+
+      /**
+       * @param {ArrayBuffer} buffer 
+       * 
+       *  convert buffer to Array
+       * 
+       * @returns Array[Number]
+       */
+      bufferToArray(buffer = new ArrayBuffer(0)) {
+        let bytes = new Uint8Array(buffer),
+            array = [];
+
+        for(let byte of bytes) array.push(byte)
+        return array;
+      }
+
+      /**
+       * @param {String} hexadecimal 
+       * 
+       *  convert String[Hexadecimal] to buffer
+       * 
+       * @returns ArrayBuffer
+       */
+      hexadecimalToBuffer(hexadecimal = '') {
+        let bytes = new Uint8Array(hexadecimal.length / 2)
+
+        for(let index in bytes) {
+          let start = index * 2,
+              end   = start + 2,
+              hex  = hexadecimal.substring(start, end)
+
+          bytes[index] = parseInt(hex, 16)
+        }
+
+        return bytes.buffer
+      }
+
+      /**
+       * @param {String} hexadecimal 
+       * 
+       *  convert String[Hexadecimal] to String[utf-8]
+       * 
+       * @returns String[utf-8]
+       */
+      hexadecimalToString(hexadecimal = '') {
+        let buffer = this.hexadecimalToBuffer(hexadecimal)
+        return this.bufferToString(buffer)
+      }
+
+      /**
+       * @param {ArrayBuffer} buffer 
+       * 
+       *  convert buffer to String[Hexadecimal]
+       * 
+       * @returns String[Hexadecimal]
+       */
+      bufferToHexadecimal(buffer = new ArrayBuffer(0)) {
+        let bytes = new Uint8Array(buffer),
+            hexadecimal = ''
+
+        for(let byte of bytes) {
+          let hex = byte.toString(16)
+          hexadecimal += ((`000${hex}`).slice(-2)).toUpperCase()
+        }
+
+        return hexadecimal
+      }
+
+      /**
+       * @param {String} value 
+       * 
+       *  convert String[utf-8] to buffer
+       * 
+       * @returns ArrayBuffer
+       */
+      stringToBuffer(string = '') {
+        let characters = unescape(encodeURIComponent(string))
+        let bytes = new Uint8Array(characters.length)
+
+        for(let index in characters)
+          bytes[index] = characters.charCodeAt(index)
+
+        return bytes.buffer
+      }
+
+      /**
+       * @param {ArrayBuffer} buffer 
+       * 
+       *  convert buffer to String[utf-8]
+       * 
+       * @returns String[utf-8]
+       */
+      bufferToString(buffer = new ArrayBuffer(0)) {
+        let bytes = new Uint8Array(buffer),
+            string = ''
+
+        for(let byte of bytes) string += String.fromCharCode(byte)
+        return string
+      }
+    }
+
+    class CryptoClass {
+      constructor() { 
+        this.window = window;
+        this.crypto = window.crypto;
+
+        this.secret = {
+          publicKey: null,
+          privateKey: null,
+          keyBuffer: null
+        }
+
+        this.keyAlgorithm   = 'RSA-OAEP';
+        this.hashAlgorithm  = 'SHA-512';
+        this.modulusLength  = 8192;
+        this.publicExponent = new Uint8Array([0x01, 0x00, 0x01]);
+        this.ivLen          = 16;
+
+        this.hashAlg        = 'SHA-256';
+      }
+
+      async generateKeys() {
+        let { publicKey, privateKey } = await this.crypto.subtle.generateKey({
+          name: this.keyAlgorithm,
+          hash: this.hashAlgorithm,
+          modulusLength: this.modulusLength,
+          publicExponent: this.publicExponent
+        }, true, ['encrypt', 'decrypt']);
+
+        this.secret.privateKey = privateKey;
+        this.secret.publicKey = publicKey;
+        this.secret.keyBuffer = this.getBits();
+      }
+
+      getBits() {
+        let bytes = [];
+
+        for(let x = 0; x < 20; x++) {
+          let uint8 = new Uint8Array(this.ivLen);
+          this.crypto.getRandomValues(uint8);
+          bytes.push(uint8);
+        }
+
+        return bytes
+      }
+
+      async exportKey(key = new CryptoKey, type = 'pkcs8') {
+        try {
+          return await this.crypto.subtle.exportKey(type, key);
+        } catch (error) { console.error(error); }
+      }
+
+      exportPublicKeyFormat(base64 = '') {
+        let key = '-----BEGIN RSA PUBLIC KEY-----\n';
+        let length = 0, endLength = base64.length;
+
+        while(length < endLength) {
+          if (length + 64 < endLength) {
+            key += base64.substr(length, 64);
+          } else {
+            key += base64.substr(length);
+          }
+
+          key += '\n';
+          length += 64;
+        }
+
+        key += '-----END RSA PUBLIC KEY-----'
+        return key;
+      }
+
+      importPublicKeyFormat(publicKey = '') {
+        let convert = new Convert();
+        let key = publicKey.replace('-----BEGIN RSA PUBLIC KEY-----\n', '')
+                           .replace('-----END RSA PUBLIC KEY-----', '');
+        return convert.base64ToBuffer(
+          key.split(/\n/g)
+           .filter(a => !!a)
+           .join()
+        );
+      }
+
+      exportPrivateKeyFormat(base64 = '') {
+        let key = '-----BEGIN RSA PRIVATE KEY-----\n';
+        let length = 0, endLength = base64.length;
+
+        while(length < endLength) {
+          if (length + 64 < endLength) {
+            key += base64.substr(length, 64);
+          } else {
+            key += base64.substr(length);
+          }
+
+          key += '\n';
+          length += 64;
+        }
+
+        key += '-----END RSA PRIVATE KEY-----'
+        return key;
+      }
+
+      importPrivateKeyFormat(privateKey = '') {
+        let convert = new Convert();
+        let key = privateKey.replace('-----BEGIN RSA PRIVATE KEY-----\n', '')
+                            .replace('-----END RSA PRIVATE KEY-----', '');
+
+        return convert.concat_buffer(
+          key.split(/\n/g)
+             .filter(a => !!a)
+             .map((base64) => convert.base64ToBuffer(base64))
+             .map((buffer) => new Uint8Array(buffer))
+        );
+      }
+
+      exportKeyBufferFormat(base64 = '') {
+        let key = '-----BEGIN RSA CRYPKEY KEY-----\n';
+        let length = 0, endLength = base64.length;
+
+        while(length < endLength) {
+          if (length + 24 < endLength) {
+            key += base64.substr(length, 24);
+          } else {
+            key += base64.substr(length);
+          }
+
+          key += '\n';
+          length += 24;
+        }
+
+        key += '-----END RSA CRYPKEY KEY-----'
+        return key;
+      }
+
+      importKeyBufferFormat(keysBuffer = '') {
+        let convert = new Convert();
+        let key = keysBuffer.replace('-----BEGIN RSA CRYPKEY KEY-----\n', '')
+                            .replace('-----END RSA CRYPKEY KEY-----', '');
+
+        return key.split(/\n/g)
+                  .filter(a => !!a)
+                  .map((base64) => convert.base64ToBuffer(base64))
+                  .map((buffer) => new Uint8Array(buffer))
+      }
+
+      async importKey(buffer = new Uint8Array(0), type = 'spki', extratable = false, usage = ['encrypt', 'decrypt']) {
+        return await this.crypto.subtle.importKey(type, buffer, {
+          name: this.keyAlgorithm,
+          hash: this.hashAlgorithm
+        }, extratable, usage);
+      }
+
+      async decrypt(buffer = new Uint8Array(0)) {
+        let decryptBuffers = []
+
+        for(let iv of this.secret.keyBuffer) {
+          let length = 0, stopDec = false;
+
+          while(length < buffer.byteLength) {
+            let _v;
+  
+            if ((length + 1024) < buffer.byteLength) {
+              _v = buffer.slice(length, length + 1024);
+            } else {
+              _v = buffer.slice(length)
+            }
+            length += 1024
+  
+            try {
+              let buffer = await this.crypto.subtle.decrypt({
+                name: this.keyAlgorithm,
+                hash: this.hashAlgorithm,
+                iv: iv
+              }, this.secret.privateKey, _v);
+
+              decryptBuffers.push(new Uint8Array(buffer));
+              stopDec = true;
+            } catch (error) { console.error(error); break; }
+          }
+
+          if (stopDec) break;
+        }
+
+        if (decryptBuffers.length) 
+          return (new Convert()).concat_buffer(decryptBuffers);
+        else throw 'failure in decrypt data';
+      }
+
+      async encrypt(buffer = new Uint8Array(0)) {
+        let vector = (() => {
+              let index = randomNumber(0, this.secret.keyBuffer.length);
+              return this.secret.keyBuffer[index]
+            })(),
+            nextIndex = 0, 
+            encryptBuffers = [];
+
+        while(nextIndex < buffer.byteLength) {
+          let _v;
+
+          if (nextIndex + 256 < buffer.byteLength) _v = buffer.slice(nextIndex, nextIndex + 256);
+          else                                     _v = buffer.slice(nextIndex);
+          nextIndex += 256;
+          
+          let encryptBuffer = await this.crypto.subtle.encrypt(
+            {
+              name: this.keyAlgorithm,
+              hash: this.hashAlgorithm,
+              iv: vector
+            }, 
+            this.secret.publicKey, 
+            _v
+          );
+
+          encryptBuffers.push(new Uint8Array(encryptBuffer));
+        }
+
+        return (new Convert()).concat_buffer(encryptBuffers);
+      }
+
+      async hash(value = '') {
+        let converter = new Convert()
+        let valueBuffer = converter.stringToBuffer(value);
+        let hashBuffer = await this.crypto.subtle.digest(this.hashAlg, valueBuffer);
+        return converter.bufferToBase64(hashBuffer);
+      }
+
+      async readInputKeys(keys = new FileList()) {
+        let exts = ['\\.priv', '\\.pub', '\\.key'];
+        let inps = []
+        let files = {}
+
+        for(let file of keys) {
+          for(let ext of exts) {
+            if (!(new RegExp(ext, 'g')).test(file.name)) continue;
+
+            if (inps.indexOf(ext) >= 0) throw "duplicate keys";
+            inps.push(ext);
+            files[ext] = file;
+          }
+        }
+
+        if (files['\\.priv'] == undefined) throw "dont have private key";
+        if (files['\\.pub'] == undefined) throw "dont have public key";
+        if (files['\\.key'] == undefined) throw "dont have encrypt keys";
+
+        for(let key in files) {
+          switch (key) {
+            case '\\.pub':
+              let pubFile = await readFile(files['\\.pub'])
+              this.secret.publicKey = await cryptoClass.importKey(
+                this.importPublicKeyFormat((new Convert()).bufferToString(pubFile.buffer)),
+                'spki',
+                true,
+                ['encrypt']
+              ); break;
+            case '\\.priv':
+              let privFile = await readFile(files['\\.priv'])
+              this.secret.privateKey = await cryptoClass.importKey(
+                this.importPrivateKeyFormat((new Convert()).bufferToString(privFile.buffer)),
+                'pkcs8',
+                false,
+                ['decrypt']
+              ); break;
+            case '\\.key':
+              let keysFile = await readFile(files['\\.key'])
+              this.secret.keyBuffer = this.importKeyBufferFormat(
+                (new Convert()).bufferToString(keysFile.buffer)
+              ); break;
+          }
+        }
+      }
+    }
+
+    const cryptoClass = new CryptoClass();
+    const brushBit = new Convert();
+
+    const setTemporary = function (element = document.createElement('div')) {
+      temporary.appendChild(element)
+    }
+
+    const setLoading = function () {
+      const page = document.createElement('div'),
+            spinner = document.createElement('div'),
+            ldio = document.createElement('div'),
+            pageSpan = document.createElement('h4');
+      
+      for(let x = 0; x < 20; x++) {
+        ldio.appendChild(document.createElement('div'))
+      }
+
+      page.classList.add("loading-page")
+      spinner.classList.add("loadingio-spinner-spinner-meb1m2uge88");
+      ldio.classList.add("ldio-2fadphxtm3");
+      pageSpan.id = "loadingSpan";
+
+      spinner.appendChild(ldio);
+      page.appendChild(spinner);
+      page.appendChild(pageSpan);
+      setTemporary(page);
+    }
+
+    const setTextLoading = function (text) {
+      try {
+        const loadingSpan = document.getElementById("loadingSpan")
+        loadingSpan.innerText = text;
+      } catch (error) { }
+    }
+
+    const sleep = function(time) {
+      time = parseFloat(time) || 1.0;
+      time = time * 1000;
+
+      return new Promise((resolve) => {
+        setTimeout(() => { resolve(true); }, time);
+      })
+    }
+
+    const clearTemporary = function (element = document.createElement('div')) {
+      temporary.removeChild(element);
+    }
+
+    const clearAllTemporary = function () {
+      while(temporary.firstChild) {
+        temporary.removeChild(temporary.firstChild);
+      }
+    }
+
+    const download = function (buffer, fileName) {
+      var blob = new Blob([buffer], {type: "octet/stream"}),
+          a    = document.createElement('a'),
+          url  = window.URL.createObjectURL(blob);
+
+          a.href = url;
+          a.download = fileName;
+
+          setTemporary(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+          clearTemporary(a);
+    }
+
+    const readFile = function(file = new File()) {
+      return new Promise((resolve, reject) => {
+        try {
+          setTextLoading(`Start read file ${file}`);
+          let fileReader = new FileReader()
+
+          fileReader.onloadend = function (event) {
+            setTextLoading(`End read file ${file}`)
+            return resolve({
+              name: file.name,
+              buffer: new Uint8Array(event.target.result)
+            });
+          }
+
+          fileReader.readAsArrayBuffer(file)
+        } catch (error) { return reject(error) }
+      })
+    }
+
+    const encrypt = async function (event, date = new Date()) {
+      const files = encryptFiles.files;
+
+      if (!files.length) {
+        alert('no files selected');
+        return;
+      }
+
+      setLoading()
+
+      setTextLoading('start generate keys to encrypt files')
+      await cryptoClass.generateKeys()
+      setTextLoading('end generate keys to encrypt files')
+
+      const { publicKey, privateKey, keyBuffer } = cryptoClass.secret
+
+      for(let file of files) {
+        try {
+          const fileBuffer = await readFile(file);
+
+          setTextLoading(`Start encrypt ${file.name}`)
+          fileBuffer.buffer = await cryptoClass.encrypt(fileBuffer.buffer)
+          setTextLoading(`End encrypt ${file.name}`)
+
+          let ext = fileBuffer.name.split('.')[1];
+          download(
+            fileBuffer.buffer,
+            (await cryptoClass.hash(fileBuffer.name)) + `.${ext || 'pdf'}`
+          );
+        } catch(error) { 
+          setTextLoading(`Failure encrypt ${file.name}`)
+          console.error(error)
+          await sleep(2)
+        }
+      }
+
+      download(
+        cryptoClass.exportPublicKeyFormat(
+          brushBit.bufferToBase64(
+            await cryptoClass.exportKey(publicKey, 'spki')
+          )
+        ), 
+        date.getTime() + '_key.pub'
+      );
+
+      download(
+        cryptoClass.exportPrivateKeyFormat(
+          brushBit.bufferToBase64(
+            await cryptoClass.exportKey(privateKey, 'pkcs8')
+          )
+        ),
+        date.getTime() +  '_key.priv'
+      );
+
+      download(
+        cryptoClass.exportKeyBufferFormat(
+          keyBuffer.map((byte) => brushBit.bufferToBase64(byte)).join('')
+        ), 
+        date.getTime() + '_key.key'
+      );
+
+      clearAllTemporary();
+    }
+
+    const decrypt = async function (event, date = new Date()) {
+      const keys = decryptFilesKeys.files
+
+      if (!keys.length) {
+        alert('please set keys to decrypt');
+        return;
+      }
+
+      const files = decryptFiles.files;
+      setLoading()
+
+      setTextLoading('start reading keys')
+      try {
+        await cryptoClass.readInputKeys(keys);
+      } catch (error) {
+        console.error(error)
+        setTextLoading("error invalid keys input");
+        await sleep(2)
+        return clearAllTemporary()
+      }
+      setTextLoading('end reading keys')
+
+      for(let file of files) {
+        try {
+          const fileBuffer = await readFile(file)
+  
+          setTextLoading(`start decrypt ${file.name}`)
+          const decrypted = await cryptoClass.decrypt(fileBuffer.buffer)
+          setTextLoading(`end decrypt ${file.name}`)
+
+          download(
+            decrypted,
+            `decrypted_${file.name}`
+          )
+        } catch (error) { 
+          console.error(error);
+          setTextLoading(`start decrypt ${file.name}`) 
+          await sleep(2)
+        }
+      }
+      return clearAllTemporary()
+    }
+  </script>
+</body>
+</html>
